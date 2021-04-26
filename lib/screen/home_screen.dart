@@ -86,41 +86,39 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _topLayerWidget() {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: _deviceWidth * 0.05, vertical: _deviceHeight * 0.005),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            _topBarWidget(),
-            SizedBox(
-              height: _deviceHeight * 0.13,
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: _deviceWidth * 0.05, vertical: _deviceHeight * 0.005),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          _topBarWidget(),
+          SizedBox(
+            height: _deviceHeight * 0.13,
+          ),
+          _featuredGamesInfoWidget(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
+            child: ScrollableWidget(
+              height: _deviceHeight * 0.22,
+              width: _deviceWidth,
+              showTitle: true,
+              gamesData: games,
             ),
-            _featuredGamesInfoWidget(),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
-              child: ScrollableWidget(
-                height: _deviceHeight * 0.24,
-                width: _deviceWidth,
-                showTitle: true,
-                gamesData: games,
-              ),
+          ),
+          _featuredGameBannerWidget(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
+            child: ScrollableWidget(
+              height: _deviceHeight * 0.20,
+              width: _deviceWidth,
+              showTitle: false,
+              gamesData: games2,
             ),
-            _featuredGameBannerWidget(),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
-              child: ScrollableWidget(
-                height: _deviceHeight * 0.22,
-                width: _deviceWidth,
-                showTitle: false,
-                gamesData: games2,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
