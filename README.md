@@ -6,6 +6,4 @@
 
 <br/><br/>
 
-<p align="center">
-    <img width="200" height="150" src="Game-Showcase/blob/master/Game-Showcase.gif">
-</p>
+https://github.com/gupta29470/Game-Showcase/blob/master/Game-Showcase.gif
